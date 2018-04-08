@@ -61,7 +61,8 @@ class Stack:
 
 class Queue:
     '''
-    This method will be where you define the object. You may or may not use front and back
+    This method will be where you define the object.
+    You may or may not need to use the front and back parameters.
     '''
     def __init__(self, front=None, back=None):
         pass
@@ -69,12 +70,12 @@ class Queue:
     '''
     This method is called upon to add an element to your object
     '''
-    def push(self):
+    def push(self, data):
         pass
 
     '''
-    This method is called upon to remove an element from the list, and return the
-    removed object
+    This method is called upon to remove an element from the list.
+    It should return the removed object.
 
     Return None if the list is empty
     '''
@@ -94,7 +95,7 @@ class Queue:
         pass
 
     '''
-    his method returns the size of your object, or in other words, the number of
+    This method returns the size of your object, or in other words, the number of
     elements that it contains.
     '''
     def size(self):
