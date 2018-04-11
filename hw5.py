@@ -22,13 +22,18 @@ class Stack:
     This method will be where you define the object. You may or may not use top and bottom
     '''
     def __init__(self, top=None, bottom=None):
-        pass
+        self.top = top
 
     '''
     This method is called upon to add an element to your object
     '''
     def push(self, data):
-        pass
+        if self.top == None:
+            self.top = Node(data)
+            return
+        temp = Node(data)
+        temp.next = self.top
+        self.top = temp
 
     '''
     This method is called upon to remove an element from the list, and return the
@@ -37,18 +42,27 @@ class Stack:
     Return None if the list is empty
     '''
     def pop(self):
-        pass
+        if self.top == None:
+            return None
+        temp = self.top
+        self.top = temp.next
+        return temp.data
 
     '''
     This method returns the top element, but does NOT remove it from the stack
     '''
     def peek(self):
-        pass
+        if self.top == None:
+            return None
+        return self.top.data
 
     '''
     This method is used to determine whether the object is empty, return a boolean
     '''
     def is_empty(self):
+        if self.top == None:
+            return True
+        return False
         pass
 
     '''
@@ -56,7 +70,8 @@ class Stack:
     elements that it contains.
     '''
     def size(self):
-        pass
+        return len(self)
+
 
 
 class Queue:
@@ -65,13 +80,20 @@ class Queue:
     You may or may not need to use the front and back parameters.
     '''
     def __init__(self, front=None, back=None):
-        pass
+        self.front = front
+        self.back = back
 
     '''
     This method is called upon to add an element to your object
     '''
     def push(self, data):
-        pass
+        if self.front == None:
+            self.front = Node(data)
+            self.back = self.front
+            return
+        temp = Node(data)
+        self.back.next = temp
+        self.back = temp
 
     '''
     This method is called upon to remove an element from the list.
@@ -80,13 +102,19 @@ class Queue:
     Return None if the list is empty
     '''
     def pop(self):
-        pass
+        if self.front == None:
+            return None
+        temp = self.front
+        self.front = temp.next
+        return temp.data
 
     '''
     This method returns the front element, but does NOT remove it from the queue
     '''
     def peek(self):
-        pass
+        if self.top == None:
+            return None
+        return self.top.data
 
     '''
     This method is used to determine whether the object is empty, return a boolean
