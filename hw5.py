@@ -63,14 +63,15 @@ class Stack:
         if self.top == None:
             return True
         return False
-        pass
 
     '''
     This method returns the size of your object, or in other words, the number of
     elements that it contains.
     '''
     def size(self):
-        return len(self)
+        if self.top == None:
+            return 1
+        return self.top
 
 
 
@@ -120,7 +121,9 @@ class Queue:
     This method is used to determine whether the object is empty, return a boolean
     '''
     def is_empty(self):
-        pass
+        if self.front == None:
+            return True
+        return False
 
     '''
     This method returns the size of your object, or in other words, the number of
